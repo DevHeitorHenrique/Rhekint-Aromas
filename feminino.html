@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfumes Femininos | Rhekint</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="website icon" type="jpg" href="Logo.jpg"
+</head>
+<body>
+
+<header>
+    <img src="logo.jpg" class="logo">
+    <h1>Perfumes Femininos</h1>
+    <p>Elegância que se sente.</p>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="masculino.html">Masculino</a>
+        <a href="feminino.html">Feminino</a>
+    </nav>
+
+    <div class="cart-badge">🛒 <span id="cart-count">0</span></div>
+</header>
+
+<section class="banner-feminino">
+    <h2>Descubra sua essência</h2>
+</section>
+
+<section class="secao-vitrine">
+    <h2>Vitrine Feminina</h2>
+</section>
+
+
+
+<div class="filtro-preco">
+    <button onclick="setFiltroPreco('todos')">Todos</button>
+    <button onclick="setFiltroPreco('menor')">Menor preço</button>
+    <button onclick="setFiltroPreco('maior')">Maior preço</button>
+</div>
+
+<div id="produtos"></div>
+<div id="carrinho"><h2>Carrinho</h2></div>
+
+<div id="checkout-modal" class="modal hidden">
+    <div class="modal-content">
+        <h2>Resumo</h2>
+        <div id="checkout-itens"></div>
+        <button onclick="confirmarCompra()">Confirmar</button>
+        <button class="cancelar" onclick="fecharModal()">Cancelar</button>
+    </div>
+</div>
+
+<script src="script2.js"></script>
+<footer class="footer-loja">
+    <div class="footer-loja-container">
+
+        <div class="footer-col">
+            <h4>Rhekint Aromas</h4>
+            <p>Perfumes que marcam presença.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Categorias</h4>
+            <a href="index.html">Home</a>
+            <a href="masculino.html">Masculino</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Atendimento</h4>
+            <p>📱 WhatsApp</p>
+            <p>📦 Apenas retirada na loja</p>
+        </div>
+
+    </div>
+
+    <div class="footer-loja-bottom">
+        © 2026 Rhekint Aromas
+    </div>
+</footer>
+<!-- MODAL LOADING -->
+<div id="loading-modal" class="modal hidden">
+    <div class="modal-content loading">
+        <div class="spinner"></div>
+        <p>Processando sua compra...</p>
+    </div>
+</div>
+
+<!-- MODAL COMPRA FINALIZADA -->
+<div id="sucesso-modal" class="modal hidden">
+    <div class="modal-content sucesso">
+        <h2>Compra realizada 🎉</h2>
+        <p>Obrigado por escolher a Rhekint Aromas.<br>
+        Seu pedido foi registrado com sucesso.</p>
+
+        <button onclick="fecharSucesso()">Continuar navegando</button>
+    </div>
+</div>
+
+
+</body>
+</html>
