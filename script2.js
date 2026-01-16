@@ -2,7 +2,7 @@ const items = [
     { id: 0, 
     nome: 'Club 6 - Intenso',
      preco: 129.90,
-      img: 'imagem.jpg',
+      img: 'imagemclub.jpg',
        quantidade: 0,
        estoque: 2, 
        categoria: 'masculino'
@@ -355,3 +355,4 @@ function animarParaCarrinho(imagemElemento) {
         imgClone.remove();
     }, 700);
 }
+
