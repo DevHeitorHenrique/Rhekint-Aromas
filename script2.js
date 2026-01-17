@@ -225,10 +225,10 @@ function removerDoCarrinho(id) {
 }
 
 function renderCarrinho() {
-    const container = document.getElementById('carrinho');
+    const container = document.getElementById('carrinho-itens');
     if (!container) return;
 
-    container.innerHTML = '<h2>Carrinho</h2>';
+    container.innerHTML = '';
     let total = 0;
 
     items.forEach(item => {
@@ -237,7 +237,10 @@ function renderCarrinho() {
 
             container.innerHTML += `
                 <div class="item-carrinho" id="item-${item.id}">
-                    <p>${item.nome}<br>${item.quantidade} x R$ ${item.preco.toFixed(2)}</p>
+                    <p>
+                        ${item.nome}<br>
+                        ${item.quantidade} x R$ ${item.preco.toFixed(2)}
+                    </p>
                     <button onclick="removerDoCarrinho(${item.id})">Remover</button>
                     <hr>
                 </div>
@@ -251,7 +254,19 @@ function renderCarrinho() {
             <button onclick="finalizarCompra()">Finalizar compra</button>
         `;
     }
+    
 }
+
+function abrirCarrinho() {
+    document.getElementById('carrinho').classList.add('aberto');
+    document.getElementById('overlay').classList.remove('hidden');
+}
+
+function fecharCarrinho() {
+    document.getElementById('carrinho').classList.remove('aberto');
+    document.getElementById('overlay').classList.add('hidden');
+}
+
 
 /* =====================
    CHECKOUT
@@ -355,4 +370,16 @@ function animarParaCarrinho(imagemElemento) {
         imgClone.remove();
     }, 700);
 }
+
+function abrirCarrinho() {
+    document.getElementById('carrinho')?.classList.add('aberto');
+    document.getElementById('overlay')?.classList.remove('hidden');
+}
+
+function fecharCarrinho() {
+    document.getElementById('carrinho')?.classList.remove('aberto');
+    document.getElementById('overlay')?.classList.add('hidden');
+}
+
+
 
