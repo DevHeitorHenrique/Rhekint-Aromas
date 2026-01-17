@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfumes Femininos | Rhekint</title>
     <link rel="stylesheet" href="style2.css">
-    <link rel="website icon" type="jpg" href="logo.jpg"
+    <link rel="website icon" type="jpg" href="logo.jpg">
 </head>
 <body>
 
@@ -20,7 +20,10 @@
         <a href="feminino.html">Feminino</a>
     </nav>
 
-    <div class="cart-badge">🛒 <span id="cart-count">0</span></div>
+    <div class="cart-badge" onclick="abrirCarrinho()">
+    🛒 <span id="cart-count">0</span>
+</div>
+
 </header>
 
 <section class="banner-feminino">
@@ -40,7 +43,20 @@
 </div>
 
 <div id="produtos"></div>
-<div id="carrinho"><h2>Carrinho</h2></div>
+
+<!-- OVERLAY -->
+<div id="overlay" class="overlay hidden" onclick="fecharCarrinho()"></div>
+
+<!-- CARRINHO LATERAL -->
+<aside id="carrinho" class="carrinho-lateral">
+    <div class="carrinho-header">
+        <h2>Carrinho</h2>
+        <button class="fechar" onclick="fecharCarrinho()">✖</button>
+    </div>
+
+    <div id="carrinho-itens"></div>
+</aside>
+
 
 <div id="checkout-modal" class="modal hidden">
     <div class="modal-content">
@@ -99,6 +115,4 @@
 
 
 </body>
-
 </html>
-
