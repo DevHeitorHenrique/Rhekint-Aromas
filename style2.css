@@ -831,28 +831,34 @@ header p {
 .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.45);
     z-index: 998;
+}
+
+.overlay.hidden {
+    display: none;
 }
 
 /* CARRINHO LATERAL */
 .carrinho-lateral {
     position: fixed;
     top: 0;
-    right: -380px;
-    width: 360px;
+    right: 0;
+    width: 340px;
+    max-width: 90%;
     height: 100vh;
     background: #fffaf4;
-    box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+    box-shadow: -4px 0 15px rgba(0,0,0,0.2);
     z-index: 999;
-    transition: right 0.35s ease;
-    display: flex;
-    flex-direction: column;
+
+    /* 🔑 ESCONDIDO POR PADRÃO */
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
 }
 
-/* ABERTO */
+/* QUANDO ABERTO */
 .carrinho-lateral.aberto {
-    right: 0;
+    transform: translateX(0);
 }
 
 /* HEADER */
@@ -892,3 +898,4 @@ header p {
 .hidden {
     display: none ;
 }
+
